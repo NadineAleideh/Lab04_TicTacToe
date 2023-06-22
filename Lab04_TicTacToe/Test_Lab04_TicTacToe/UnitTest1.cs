@@ -1,15 +1,15 @@
 
 using Lab04_TicTacToe.Classes;
-using NUnit.Framework;
-using Assert = NUnit.Framework.Assert;
+using Xunit;
+
 
 namespace Test_Lab04_TicTacToe
 {
-    [TestFixture]
+    
     public class UnitTest1
     {
-    
-        [Test]
+
+        [Fact]
         public static void TestForWinner()
         {
             // Given a game board, test for winners
@@ -20,16 +20,17 @@ namespace Test_Lab04_TicTacToe
 
             game.Board.GameBoard = new string[,]
            {
-                   {"X", "X", "O"},
-                   {"O", "O", "X"},
-                   {"X", "X", "O"}
+                   {"X", "X", "X"},
+                   {"O", "O", "6"},
+                   {"7", "8", "9"}
            };
 
             bool hasWinnerr = game.CheckForWinner(game.Board);
-            Assert.IsTrue(hasWinnerr);
+            bool expected = true;
+            Assert.Equal(hasWinnerr, expected);
         }
 
-        [Test]
+        [Fact]
         public void TestSwitchPlayer()
         {
             //Test that there is a switch in players between turns
@@ -39,10 +40,10 @@ namespace Test_Lab04_TicTacToe
             game1.SwitchPlayer();
             Player switchedPlayer = game1.NextPlayer();
 
-            Assert.AreNotEqual(currentPlayer, switchedPlayer);
+            Assert.NotEqual(currentPlayer, switchedPlayer);
         }
 
-        [Test]
+        [Fact]
         public void TestPlayerGetPosition()
         {
             // Test to confirm that the position the player inputs correlates to the correct index of the array
@@ -56,12 +57,12 @@ namespace Test_Lab04_TicTacToe
                 Console.SetIn(sr);
                 Position position = playerr.GetPosition(board1);
 
-                Assert.AreEqual(0, position.Row);
-                Assert.AreEqual(0, position.Column);
+                Assert.Equal(0, position.Row);
+                Assert.Equal(0, position.Column);
             }
         }
 
-        [Test]
+        [Fact]
         public static void TestGamePlayReturnsNullWhenGameEndsInADraw()
         {// when game ends in draw
             Player player1 = new Player("Player1", "X");
@@ -98,8 +99,8 @@ namespace Test_Lab04_TicTacToe
            
            bool hasWinner = game3.CheckForWinner(game3.Board);
            
-            Assert.IsFalse(s);
-            Assert.IsFalse(hasWinner);
+            Assert.False(s);
+            Assert.False(hasWinner);
 
         }
     }
