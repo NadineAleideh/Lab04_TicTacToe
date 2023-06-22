@@ -8,9 +8,9 @@ A 3x3 grid is used for the traditional paper and pencil game of tic tac toe. Two
 
 Here's a samle of what the TicTacToe game looks like when played:
 
-![gamelook](./assets/TicTacToep1.PNG)
-![gamelook](./assets/TicTacToep2.PNG)
-![gamelook](./assets/TicTacToepdraw.PNG)
+![gamelook](./Lab04_TicTacToe/assets/TicTacToep1.PNG)
+![gamelook](./Lab04_TicTacToe/assets/TicTacToep2.PNG)
+![gamelook](./Lab04_TicTacToe/assets/TicTacToepdraw.PNG)
 
 ## How to Use
 
@@ -38,4 +38,4 @@ To play the TicTacToe game, follow these steps:
 
 Automated unit tests are included to verify the correctness of critical game functions.
 
-![gametest](./assets/TicTacToetest.PNG)
+![gametest](./Lab04_TicTacToe/assets/TicTacToetest.PNG)
